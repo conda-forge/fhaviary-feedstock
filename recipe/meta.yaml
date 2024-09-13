@@ -1,5 +1,5 @@
 {% set name = "fhaviary" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fhaviary-{{ version }}.tar.gz
-  sha256: 172803e5a5e49dfd0dab06589ca27a3b8840b30c0d1279b5cd9a0d3f4bf65555
+  sha256: 3d777ae4b3ce4e84973810f9beaf0547e686364a398537c6a5d22d4a4acda3e2
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.11
-    - docstring_parser
+    - docstring_parser >=0.16
     - httpx
     - pydantic >=2.0,<3.dev0
 
