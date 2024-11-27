@@ -1,5 +1,5 @@
 {% set name = "fhaviary" %}
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fhaviary-{{ version }}.tar.gz
-  sha256: 625f7bbe9f1729f3ddea9e64ecb6c29653b9c6edf302d8d25be1474212472e0e
+  sha256: cc921adb7b4fe9437d3bd3931009f939f9dfb9943de52104cecab1b89192bccc
 
 build:
   noarch: python
