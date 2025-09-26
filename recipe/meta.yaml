@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "fhaviary" %}
-{% set version = "0.24.1" %}
+{% set version = "0.24.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fhaviary-{{ version }}.tar.gz
-  sha256: a7756bc5e0c2f7edc27ff45c7aafd17e561e9e97eef4819bae2315c43a16a971
+  sha256: 91e2b0e722be8db62b63de1133f6b37106343fb09d4c9cdbe60295892f642d23
 
 build:
   noarch: python
@@ -22,6 +22,7 @@ requirements:
     - setuptools-scm >=8
     - pip
   run:
+    - httpx-aiohttp
     - python >={{ python_min }}
     - docstring_parser >=0.16
     - httpx
