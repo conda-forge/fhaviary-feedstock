@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "fhaviary" %}
-{% set version = "0.29.0" %}
+{% set version = "0.30.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fhaviary-{{ version }}.tar.gz
-  sha256: 5c3df8c43868b3623d65aa6628de0bf25b06a7706c803363a6c48e4aa89db02b
+  sha256: 112238849f166e870d6ee2a0d46f1c7200b8a0a82773e138a53a3a2e68b44865
 
 build:
   noarch: python
