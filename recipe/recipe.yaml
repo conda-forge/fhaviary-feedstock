@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  python_min: "3.11"
+  name: fhaviary
+  version: "0.35.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fhaviary-${{ version }}.tar.gz
+  sha256: d13debda9ea898fb4c7bebb8d592c5e9838f6d167e13da31e0b9b55b5f0c0f17
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=64
+    - setuptools-scm >=8
+    - pip
+  run:
+    - pydantic-core
+    - httpx-aiohttp
+    - python >=${{ python_min }}
+    - docstring_parser >=0.16
+    - httpx
+    - pydantic >=2.0,<3.dev0
+
+tests:
+  - python:
+      imports:
+        - aviary
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Gymnasium framework for training language model agents on constructive tasks
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://pypi.org/project/fhaviary/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
