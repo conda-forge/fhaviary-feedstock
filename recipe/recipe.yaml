@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: "3.11"
   name: fhaviary
-  version: "0.35.0"
+  version: "0.36.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fhaviary-${{ version }}.tar.gz
-  sha256: d13debda9ea898fb4c7bebb8d592c5e9838f6d167e13da31e0b9b55b5f0c0f17
+  sha256: eb30db4f05c94c0a29a3b55f1b0735aa3c7dbfd2e1935e162adb524e663c88fa
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
